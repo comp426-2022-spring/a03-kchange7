@@ -1,5 +1,5 @@
 // Import Express.js
-import express from 'express';
+const express = require('express');
 const app = express();
 
 const server = app.listen(HTTP_PORT, () => {
