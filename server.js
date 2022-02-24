@@ -33,6 +33,13 @@ app.get('/app/flips/:number', (req, res) => {
     res.json({ "raw": flips, "summary": summary })
 });
 
+app.get('/app/flip/call/:call', (req, res) => {
+    const result = flipACoin(req.params.call);
+
+    res.statusCode = 200;
+    res.json(result);
+});
+
 app.use(function (req, res) {
     res.status(404).send('404 NOT FOUND')
 });
@@ -134,9 +141,3 @@ function flipACoin(call) {
     output.result = output.flip === call ? "win" : "lose";
     return output;
 }
-
-
-/** Export
- * 
- * Export all of your named functions
-*/
