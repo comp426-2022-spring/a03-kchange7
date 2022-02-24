@@ -26,6 +26,14 @@ app.get('/app/flip/', (req, res) => {
     res.json({ "flip": flip });
 });
 
+app.get('/app/flips/:number', (req, res) => {
+    const flips = coinFlips(req.params.number);
+    const summary = countFlips(flips);
+
+    res.statusCode = 200;
+    res.json({ "raw": flips, "summary": summary })
+});
+
 app.use(function (req, res) {
     res.status(404).send('404 NOT FOUND')
 });
