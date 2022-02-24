@@ -4,7 +4,7 @@
   "description": "API version of coinflip from a02",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js port=5555"
+    "test": "node server.js --port=5555"
   },
   "repository": {
     "type": "git",
